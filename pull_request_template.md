@@ -1,4 +1,4 @@
-<!-- An agent's PR starts with one line above this comment, for example: > Written by an AI agent for @handle. @handle has not reviewed it yet.
+<!-- An agent's PR starts with one line above this comment, for example: > Written by an AI agent for @handle.
 Fill each section in place and delete every hint like this one: the description becomes the squash commit's body on main. -->
 
 ## What and why
