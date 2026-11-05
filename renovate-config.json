@@ -1,0 +1,27 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Renovate settings every dinetap-global repository extends (local>dinetap-global/.github:renovate-config). prBodyTemplate fills the sections of every repository's pull request template, so Renovate's pull requests pass the description checks.",
+  "extends": ["config:recommended", ":semanticCommits", "helpers:pinGitHubActionDigests"],
+  "timezone": "Asia/Singapore",
+  "schedule": ["before 9am on monday"],
+  "minimumReleaseAge": "3 days",
+  "labels": ["deps"],
+  "dependencyDashboard": true,
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "major": {
+    "dependencyDashboardApproval": true
+  },
+  "vulnerabilityAlerts": {
+    "minimumReleaseAge": null,
+    "schedule": ["at any time"]
+  },
+  "packageRules": [
+    {
+      "groupName": "github actions",
+      "matchManagers": ["github-actions"]
+    }
+  ],
+  "prBodyTemplate": "## What and why\n\nRenovate keeps this repository's dependencies current. The table below says which ones move and why: a version, a digest or a security fix.\n\n## What changed\n\n{{{table}}}{{{warnings}}}{{{notes}}}\n\n## Evidence\n\nThis repository's CI on this pull request builds, lints and tests with the new versions. The upstream release notes:\n\n{{{changelogs}}}\n\nNot checked: anything CI doesn't cover; the reviewer reads the release notes for breaking changes.\nWatch after deploy: errors from code that uses the updated packages.\n\n## Guard\n\nnone: not a fix\n\n## Flag\n\nnone: a dependency update\n\n## Rollout and rollback\n\nShips with this repository's next deploy. Roll back by reverting this commit.\n\n## Infra\n\nnone: dependency versions only. When infrastructure code uses an updated package, this pull request's previews show any resource change.\n\n## Docs\n\nnone needed: dependency versions only.\nDocs conflicts: none.\n\n{{{configDescription}}}{{{controls}}}{{{footer}}}"
+}
