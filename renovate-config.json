@@ -10,9 +10,6 @@
   "lockFileMaintenance": {
     "enabled": true
   },
-  "major": {
-    "dependencyDashboardApproval": true
-  },
   "vulnerabilityAlerts": {
     "minimumReleaseAge": null,
     "schedule": ["at any time"]
